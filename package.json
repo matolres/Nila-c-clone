@@ -25,7 +25,7 @@
     "react-collapsible": "^2.10.0",
     "react-dom": "^18",
     "react-medium-image-zoom": "^5.2.8",
-    "sass": "^1.76.0",
+    "sass": "^1.77.8",
     "split-type": "^0.3.4",
     "swiper": "^11.1.3"
   },
