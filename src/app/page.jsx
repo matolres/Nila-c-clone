@@ -4,16 +4,17 @@ import Menu from "./components/menu";
 import Footer from "./components/footer";
 import { performRequest } from "./lib/datocms";
 
+
 const query = `
 query {
-allPaintCombinations {
+  allPaintCombinations {
     colorCombo {
       url
     }
     id
     name
   }
-     allModelPics {
+  allModelPics {
     number
     model {
       url
@@ -38,17 +39,17 @@ export default async function Home() {
   const { data } = await performRequest({ query: query });
   const allProducts = data.allProducts;
   const allPaintCombinations = data.allPaintCombinations;
-  const allModelPics = data.allModelPics
-  console.log("fetched model pics :", allModelPics)
+  const allModelPics = data.allModelPics;
+  
+  console.log("fetched model pics :", allModelPics);
   console.log("Fetched ALLPRODUCTS in Shop component:", allProducts);
   console.log("Fetched data in Shop component:", allPaintCombinations);
   
   return (
     <>
-      <Menu className={styles.menu}
-      primary="yellow"
-      secondary="blue"
-      />
+
+      
+      <Menu className={styles.menu} primary="yellow" secondary="blue" />
       <LandingPageContent products={allProducts} paintCombination={allPaintCombinations} models={allModelPics} />
       <Footer />
     </>

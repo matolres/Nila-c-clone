@@ -172,18 +172,10 @@ export default function Menu({ primary, secondary }) {
                 <div className={`${styles.items_container} ${isOpen ? styles.animate_menu : styles.animate_menu_up}`}>
                     <ul className={styles.items}>
                         <GSAPAnimation targetSelector=".item-text" />
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}>
-                            <Link className={styles.link} href='/pages/shop'>SHOP</Link>
-                        </li>
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}>
-                            <Link href='/pages/lookbook'>LOOKBOOK</Link>
-                        </li>
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}>
-                            <Link href='/pages/about'>ABOUT</Link>
-                        </li>
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}>
-                            <Link href='/pages/contact'>CONTACT</Link>
-                        </li>
+                        <Link className={styles.link} href='/pages/shop'><li className={`${styles.item} item-text`} style={{ color: secondary }}>SHOP</li></Link>
+                        <Link href='/pages/lookbook'><li className={`${styles.item} item-text`} style={{ color: secondary }}>LOOKBOOK</li></Link>
+                        <Link href='/pages/about'><li className={`${styles.item} item-text`} style={{ color: secondary }}>ABOUT</li></Link>
+                        <Link href='/pages/contact'><li className={`${styles.item} item-text`} style={{ color: secondary }}>CONTACT</li></Link>
                     </ul>
                 </div>
             </header>
@@ -230,3 +222,50 @@ export default function Menu({ primary, secondary }) {
 }
 
 
+
+/* 
+
+ <div className={`${styles.background_overlay} ${overlayVisible ? styles.visible_overlay : ''}`} style={{ backgroundColor: secondary }}></div>
+
+                <div className={`${styles.items_container} ${isOpen ? styles.animate_menu : styles.animate_menu_up}`}>
+                    <ul className={styles.items}>
+                        <GSAPAnimation targetSelector=".item-text" />
+                        <Link className={styles.link} href='/pages/shop'><li className={`${styles.item} item-text`} style={{ color: secondary }}>SHOP</li></Link>
+                        <Link href='/pages/lookbook'><li className={`${styles.item} item-text`} style={{ color: secondary }}>LOOKBOOK</li></Link>
+                        <Link href='/pages/about'><li className={`${styles.item} item-text`} style={{ color: secondary }}>ABOUT</li></Link>
+                        <Link href='/pages/contact'><li className={`${styles.item} item-text`} style={{ color: secondary }}>CONTACT</li></Link>
+                    </ul>
+                </div>
+            </header>
+            <div className={styles.desktop_menu_container} style={{ '--desktop-item-primary': primary }}>
+                <div className={styles.desktop_menu_container} style={{ '--desktop-item-secondary': secondary }}>
+                    <ul className={styles.menu_items_desktop}>
+                        <Link href='/pages/shop' className={styles.link}>
+                            <li className={styles.item_desktop} style={{ color: primary }}>
+                                <span className={styles.item_text}>SHOP</span>
+                                <span className={styles.overlay}>SHOP</span>
+                            </li>
+                        </Link>
+                        <Link href='/pages/lookbook' className={styles.link}>
+                            <li className={styles.item_desktop} style={{ color: primary }}>
+                                <span className={styles.item_text}>LOOKBOOK</span>
+                                <span className={styles.overlay}>LOOKBOOK</span>
+                            </li>
+                        </Link>
+                        <Link href='/pages/about' className={styles.link}>
+                            <li className={styles.item_desktop} style={{ color: primary }}>
+                                <span className={styles.item_text}>ABOUT</span>
+                                <span className={styles.overlay}>ABOUT</span>
+                            </li>
+                        </Link>
+                        <Link href='/pages/contact' className={styles.link}>
+                            <li className={styles.item_desktop} style={{ color: primary }}>
+                                <span className={styles.item_text}>CONTACT</span>
+                                <span className={styles.overlay}>CONTACT</span>
+                            </li>
+                        </Link>
+                    </ul>
+                </div>
+            </div>
+
+*/
