@@ -7,11 +7,15 @@
   left: 0;
 }
 
+.checkout_main_container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
   h2, h3, p, label {
     color: red;
   }
@@ -19,7 +23,12 @@
 
 .order_summary_container {
   padding-top: 60px;
+  span {
+    font-size: 1.25rem;
+  }
 }
+
+
 
 .li_container {
   display: flex;
@@ -64,6 +73,7 @@
 .formGroup label {
   display: block;
   margin-bottom: 5px;
+  font-size: 1.25rem;
 }
 
 .formGroup input {
@@ -96,3 +106,16 @@
   color: green;
   font-weight: bold;
 }
+
+.pay_button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  background: red;
+  color: #00F135;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+

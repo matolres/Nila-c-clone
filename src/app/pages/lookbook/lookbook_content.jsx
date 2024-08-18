@@ -25,7 +25,7 @@ export default function LookbookContent({ lookbook }) {
           {lookbook.gallery.map((image) => (
             <div className={styles.image_container} key={image.url}>
               <Image
-                alt=""
+                alt={image.title}
                 src={image.url}
                 layout="responsive"
                 objectFit="cover"

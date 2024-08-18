@@ -20,14 +20,21 @@
 
 
 }
-.open_filter {
+.category_filter {
+  display: flex;
+  justify-content: end;
+  .open_filter {
     cursor: pointer;
-    display: block;
+    display: inline-block; 
     align-self: flex-end;
     color: red;
-    margin: 1rem ;
+    margin: 1rem;
     text-align: end;
+    background-color: transparent;
+    border: none; 
+  }
 }
+
 
 .op_overlay {
     position: fixed;

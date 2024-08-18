@@ -60,7 +60,7 @@ export default function About() {
                     </div>
                     <div className={styles.casper_image}>
                         <Image 
-                            alt='' 
+                            alt='Casper and his products' 
                             src="/about.jpg" 
                             layout='responsive' 
                             objectFit='cover' 

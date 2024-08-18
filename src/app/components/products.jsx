@@ -10,7 +10,7 @@ const Products = ({ product, color }) => {
     <div className={styles.product_container}>
       <Link href={`/pages/product/${product.id}`} key={product.id} className={styles.product_link}>
 
-          <Image src={product.productFrontImage.url} alt="" height="200" width="200" style={{ objectFit: 'cover', width: '100%', height: 'auto' }} />
+          <Image src={product.productFrontImage.url} alt={`${product.color} ${product.category} ${product.paintCombo}`} height="200" width="200" style={{ objectFit: 'cover', width: '100%', height: 'auto' }} />
           <div className={styles.color_price}>
             <h3 className="type" style={{color:color}}>{product.category} - {product.paintCombo}</h3>
             <p style={{color:color}}>{product.color}</p>

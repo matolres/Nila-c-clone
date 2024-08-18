@@ -149,7 +149,7 @@ export default function LandingPageContent({ products, paintCombination, models,
             <div className={styles.image}>
               <Image
                 className={styles.img}
-                alt=""
+                alt={paint.name}
                 src={paint.colorCombo.url}
                 width={400}
                 height={400}
@@ -233,14 +233,14 @@ export default function LandingPageContent({ products, paintCombination, models,
           <div className={styles.small_model_pics}>
             {smallModelPics.map(pic => (
             <Link href='/pages/lookbook' key={pic.number}>
-              <Image key={pic.number} src={pic.model.url} alt=""   width={300} height={300} style={{ objectFit: 'cover' }} />
+              <Image key={pic.number} src={pic.model.url} alt="model picture"   width={300} height={300} style={{ objectFit: 'cover' }} />
               </Link>
             ))}
           </div>
           <div className={styles.big_model_pics}>
             {bigModelPic && (
               <Link href='/pages/lookbook'>
-                <Image className={styles.big_model} src={bigModelPic.model.url} alt=""  width={300} height={600} style={{ objectFit: 'cover' }} />
+                <Image className={styles.big_model} src={bigModelPic.model.url} alt="model picture"  width={300} height={600} style={{ objectFit: 'cover' }} />
               </Link>
             )}
           </div>

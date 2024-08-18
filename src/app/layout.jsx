@@ -1,7 +1,7 @@
 import "./globals.scss";
 import { ShoppingBagProvider } from '@/app/contexts/shopping_bag_context';
 import { PageColorProvider } from '@/app/contexts/page_color_context';
-import { oswald, bebasNeue, dmMono } from '@/app/fonts/fonts';
+import { bebasNeue, dmMono } from '@/app/fonts/fonts';
 
 
 export const metadata = {
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${oswald.variable} ${bebasNeue.variable} ${dmMono.variable}`}>
+      <body className={` ${bebasNeue.variable} ${dmMono.variable}`}>
         <ShoppingBagProvider>
           <PageColorProvider>
             {children}
