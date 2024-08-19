@@ -4,15 +4,13 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ShoppingBagContext = createContext();
 
 export const ShoppingBagProvider = ({ children }) => {
-
-    const [bag, setBag] = useState([]);
-
-    useEffect(() => {
+    const [bag, setBag] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedBag = sessionStorage.getItem('shoppingBag');
-            setBag(savedBag ? JSON.parse(savedBag) : []);
+            return savedBag ? JSON.parse(savedBag) : [];
         }
-    }, []);
+        return [];
+    });
 
     useEffect(() => {
         const interval = setInterval(() => {
