@@ -34,7 +34,7 @@ const ProductDetail = ({ product }) => {
       setIsVertical(window.innerWidth >= 1024);
     };
 
-    handleResize(); // Set initial value
+    handleResize(); 
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);

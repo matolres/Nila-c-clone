@@ -26,11 +26,11 @@ export default function Footer({color, border, fill}) {
                 </div>
             </div>
             <div className={styles.content_2}>
-                <ul >
-                    <Link href='/'><li style={{color: color}}>Terms and conditions</li></Link>
-                    <Link href='/'><li style={{color: color}}>Privacy statment</li></Link>
-                    <Link href='/'><li style={{color: color}}>Contact</li></Link>
-                    <Link href='/'><li style={{color: color}}>Return</li></Link>
+                <ul className={styles.content_2_1}>
+                    <li className={styles.content_2_li} style={{color: color}}><Link href='/'>Terms and conditions </Link></li>
+                    <li className={styles.content_2_li} style={{color: color}}><Link href='/'>Privacy statment </Link></li>
+                    <li className={styles.content_2_li} style={{color: color}}><Link href='/'>Contact</Link></li>
+                    <li className={styles.content_2_li} style={{color: color}}><Link href='/'>Return</Link></li>
                 </ul>
                 <p style={{color: color}}>@2024</p>
             </div>

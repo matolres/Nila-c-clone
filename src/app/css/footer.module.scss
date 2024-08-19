@@ -54,14 +54,19 @@ top: 50%;
         flex-direction: row;
         justify-content: space-between;
         gap: 1rem;
-        ul {
+        .content_2_1 {
             font-size: 1rem;
             font-family: "Dm_Mono";
             list-style: none;
-            a {
-                text-decoration: none;
-                color: yellow;
+            .content_2_li {
+                margin: 0.5rem 0;
+                a {
+                    text-decoration: none;
+                    color: yellow;
+                    margin: 0.5rem 0rem;
+                }
             }
+            
         }
         p {
             align-self: end;
