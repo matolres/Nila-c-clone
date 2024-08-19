@@ -17,14 +17,14 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined) {
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
 export default function StripeCheckout() {
-    const { bag } = useShoppingBag(); // Get the shopping bag context
+    const { bag } = useShoppingBag(); 
     const [clientSecret, setClientSecret] = useState("");
 
-    // Calculate the total amount from the shopping bag
+   
     const amount = bag.reduce((total, { product }) => total + product.price, 0);
 
     useEffect(() => {
-        if (amount > 0) { // Only fetch if there's a positive amount
+        if (amount > 0) { 
             fetch("/api/create-payment-intent", {
                 method: "POST",
                 headers: {

@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react";
 import ShoppingBag from "./shopping-bag";
 import GSAPAnimation from "./Text-reveal-animation";
 import { useShoppingBag } from "@/app/contexts/shopping_bag_context";
+import { usePathname } from 'next/navigation';
+
 
 export default function Menu({ primary, secondary }) {
     const { bagCount } = useShoppingBag();
@@ -15,6 +17,7 @@ export default function Menu({ primary, secondary }) {
     const [shouldRenderShoppingBag, setShouldRenderShoppingBag] = useState(false);
     const shoppingBagRef = useRef(null);
     const [overlayVisible, setOverlayVisible] = useState(false);
+    const pathname = usePathname();
 
     const handleShoppingBagClick = () => {
         if (!isShoppingBagOpen) {
@@ -108,6 +111,12 @@ export default function Menu({ primary, secondary }) {
         }
     }, [isOpen]);
 
+    const getActiveStyle = (path) => {
+        return pathname === path
+            ? { color: secondary, backgroundColor: primary, borderRadius: "3px" }
+            : { color: primary, backgroundColor: 'transparent' };
+    };
+
     return (
         <>
             <header className={styles.menu_header} style={{ '--desktop-item-primary': primary, '--desktop-item-secondary': secondary }}>
@@ -182,38 +191,30 @@ export default function Menu({ primary, secondary }) {
             <div className={styles.desktop_menu_container} style={{ '--desktop-item-primary': primary }}>
                 <div className={styles.desktop_menu_container} style={{ '--desktop-item-secondary': secondary }}>
                     <ul className={styles.menu_items_desktop}>
-                        
-                            <li className={styles.item_desktop} >
-                            <Link href='/pages/shop' className={styles.link}>
-                                <span className={styles.item_text} style={{ color: primary }}>SHOP</span>
+                        <li className={styles.item_desktop}>
+                            <Link href='/pages/shop' className={styles.link} style={getActiveStyle('/pages/shop')}>
+                                <span className={styles.item_text}>SHOP</span>
                                 <span className={styles.overlay}>SHOP</span>
                             </Link>
-                            </li>
-                        
-                        
-                            <li className={styles.item_desktop} >
-                            <Link href='/pages/lookbook' className={styles.link}>
-                                <span className={styles.item_text} style={{ color: primary }}>LOOKBOOK</span>
+                        </li>
+                        <li className={styles.item_desktop}>
+                            <Link href='/pages/lookbook' className={styles.link} style={getActiveStyle('/pages/lookbook')}>
+                                <span className={styles.item_text}>LOOKBOOK</span>
                                 <span className={styles.overlay}>LOOKBOOK</span>
                             </Link>
-                            </li>
-                        
-                        
-                            <li className={styles.item_desktop} >
-                            <Link href='/pages/about' className={styles.link}>
-                                <span className={styles.item_text} style={{ color: primary }}>ABOUT</span>
+                        </li>
+                        <li className={styles.item_desktop}>
+                            <Link href='/pages/about' className={styles.link} style={getActiveStyle('/pages/about')}>
+                                <span className={styles.item_text}>ABOUT</span>
                                 <span className={styles.overlay}>ABOUT</span>
                             </Link>
-                            </li>
-                        
-                       
-                            <li className={styles.item_desktop} >
-                            <Link href='/pages/contact' className={styles.link}>
-                                <span className={styles.item_text} style={{ color: primary }}>CONTACT</span>
+                        </li>
+                        <li className={styles.item_desktop}>
+                            <Link href='/pages/contact' className={styles.link} style={getActiveStyle('/pages/contact')}>
+                                <span className={styles.item_text}>CONTACT</span>
                                 <span className={styles.overlay}>CONTACT</span>
                             </Link>
-                            </li>
-                        
+                        </li>
                     </ul>
                 </div>
             </div>

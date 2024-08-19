@@ -8,11 +8,11 @@ export const ShoppingBagProvider = ({ children }) => {
     const [bag, setBag] = useState([]);
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const savedBag = sessionStorage.getItem('shoppingBag');
-            setBag(savedBag ? JSON.parse(savedBag) : []);
-        }
-    }, []);
+    if (typeof window !== 'undefined') {
+        const savedBag = sessionStorage.getItem('shoppingBag');
+        setBag(savedBag ? JSON.parse(savedBag) : []);
+    }
+}, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
