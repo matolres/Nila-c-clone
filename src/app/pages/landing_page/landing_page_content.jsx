@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
-import Script from "next/script";  // Import the Script component
+import React, { useEffect, useState, useRef, useCallback, useMemo } from "react";
 import Image from "next/image";
 import styles from "@/app/page.module.scss";
 import GSAPAnimation from "@/app/components/Text-reveal-animation";
@@ -27,35 +26,29 @@ export default function LandingPageContent({ products, paintCombination, models,
     return () => setColors({ text: 'defaultTextColor', background: 'defaultBackgroundColor' });
   }, [setColors]);
 
-  const handleAddToBag = (product) => {
+  const handleAddToBag = useCallback((product) => {
     const result = addToBag(product);
     if (result.status === 'added') {
       setMessage('Product added to the bag.');
     } else if (result.status === 'exists') {
       setMessage('Product is already in the bag.');
     }
-
+  
     setTimeout(() => {
       setMessage('');
     }, 4000);
-  };
+  }, [addToBag]);
 
   const handleScrollToSection = () => {
     sectionRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const smallModelPics = models.filter(pic => pic.number === 1 || pic.number === 2);
-  const bigModelPic = models.find(pic => pic.number === 3);
+  const smallModelPics = useMemo(() => models.filter(pic => pic.number === 1 || pic.number === 2), [models]);
+  const bigModelPic = useMemo(() => models.find(pic => pic.number === 3), [models]);
+  
 
   return (
     <>
-
-      <Script
-        id="mcjs"
-        strategy="afterInteractive"
-        src="https://chimpstatic.com/mcjs-connected/js/users/d5db12d528f864f72d31a2cd8/37837a798e90e99f2f6cd6df8.js"
-      />
-
       <main className={styles.main_container}>
         <div className={styles.background}></div>
         {message && <div className={styles.message}><span>{message}</span></div>}
@@ -250,6 +243,7 @@ export default function LandingPageContent({ products, paintCombination, models,
           </div>
         </section>
       </main>
+
     </>
   );
 }
