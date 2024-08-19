@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Collapsible from 'react-collapsible';
 import Image from 'next/image';
@@ -41,18 +41,18 @@ const ProductDetail = ({ product }) => {
     };
   }, []);
 
-  const handleAddToBag = () => {
+  const handleAddToBag = useCallback((product) => {
     const result = addToBag(product);
     if (result.status === 'added') {
       setMessage('Product added to the bag.');
     } else if (result.status === 'exists') {
       setMessage('Product is already in the bag.');
     }
-
+  
     setTimeout(() => {
       setMessage('');
     }, 4000);
-  };
+  }, [addToBag]);
 
   const handleCheckout = () => {
     router.push('/pages/checkout');
