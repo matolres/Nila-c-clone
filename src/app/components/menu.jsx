@@ -172,10 +172,10 @@ export default function Menu({ primary, secondary }) {
                 <div className={`${styles.items_container} ${isOpen ? styles.animate_menu : styles.animate_menu_up}`}>
                     <ul className={styles.items}>
                         <GSAPAnimation targetSelector=".item-text" />
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}><Link className={styles.link} href='/pages/shop'>SHOP </Link></li>
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}><Link href='/pages/lookbook'>LOOKBOOK</Link></li>
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}><Link href='/pages/about'>ABOUT</Link></li>
-                        <li className={`${styles.item} item-text`} style={{ color: secondary }}> <Link href='/pages/contact'>CONTACT</Link></li>
+                        <li className={styles.item} ><Link className={`${styles.mobile_menu_item} item-text`} style={{ color: secondary }} href='/pages/shop'>SHOP </Link></li>
+                        <li className={styles.item} ><Link className={`${styles.mobile_menu_item} item-text`} style={{ color: secondary }} href='/pages/lookbook'>LOOKBOOK</Link></li>
+                        <li className={styles.item} ><Link className={`${styles.mobile_menu_item} item-text`} style={{ color: secondary }} href='/pages/about'>ABOUT</Link></li>
+                        <li className={styles.item} > <Link className={`${styles.mobile_menu_item} item-text` } style={{ color: secondary }} href='/pages/contact'>CONTACT</Link></li>
                     </ul>
                 </div>
             </header>

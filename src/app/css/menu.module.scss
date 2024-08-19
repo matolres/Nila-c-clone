@@ -101,9 +101,15 @@
             display: block;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             text-align: center;
-            color: blue;
-            transform: translateY(-150px);
+
+            .mobile_menu_item {
+              font-family: var(--bebasNeue-font);
+              font-weight: 600;
+              font-style: normal;
+            }
+            
         }
+
         
 
 
