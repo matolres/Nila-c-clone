@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, useRef } from 'react';
 import styles from "@/app/css/filter.module.scss";
 import Collapsible from 'react-collapsible';
